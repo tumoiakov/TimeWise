@@ -1,14 +1,13 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
 export default function Home() {
+  const { t, i18n } = useTranslation();
+
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen py-2">
-      <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">Welcome to Home</h1>
-        <Link to={"/dashboard"} className="text-blue-600">
-          Go to Dashboard
-        </Link>
-      </div>
+    <main className="flex flex-col h-full p-2">
+      <Link to="/dashboard">{t("home.dashboardLink")}</Link>
+      <h1>{t("home.title")}</h1>
     </main>
   );
 }
